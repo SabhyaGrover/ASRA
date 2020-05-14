@@ -25,72 +25,64 @@
                 <div class="card-body">
                   <form method="POST">
                     {% csrf_token %}
-                    <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
-                          <label class="bmd">Name</label>
-                          <span>
-                          <input type="text" class="form-control">{{ form.name }} </span>
+
+                      <fieldset class="form-group" form="student">
+                        <div class="row">
+                        <div class="col-md-8">
+                          <label class="bmd-label-floating">Name</label>
+                          <span class="form-control"> {{ form.name }}</span>
                         </div>
                       </div>
-                    </div>
+
                     <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
+
+                      <div class="col-md-4">
                           <label class="bmd-label-floating">Age</label>
-
-                          <span>
-                          <input type="number" class="form-control">{{ form.age }}</span>
+                          <span class="form-control">{{ form.age }}</span>
                         </div>
-                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
+
+                      <div class="col-md-4">
                           <label class="bmd-label-floating">Gender</label>
-
-                          <span>
-                            <input type="text" class="form-control">{{ form.sex }}</span>
+                          <span class="form-control">
+                            {{ form.sex }}</span>
                         </div>
                       </div>
-                    </div>
+
                     <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
+                      <div class="col-md-8">
                           <label class="bmd-label-floating">Date Of Admission</label>
 
-                          <span>
-                            <input type="date" class="form-control">{{ form.date_of_admission }}</span>
+                          <span class="form-control">{{ form.date_of_admission }}</span>
                         </div>
-                      </div>
                     </div>
                     <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Date Of Leaving</label>
+                      <div class="col-md-8">
 
-                          <span>
-                            <input type="date" class="form-control">{{ form.date_of_leaving }}</span>
+                          <label class="bmd-label-floating">Date Of Leaving</label>
+                          <span class="form-control">{{ form.date_of_leaving }}</span>
                         </div>
-                      </div>
+
                     </div>
                     <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
+
+                      <div class="col-md-4">
+
                           <label class="bmd-label-floating">Education</label>
 
-                          <span>
-                            <input type="text" class="form-control">{{ form.education }}</span>
+                          <span class="form-control">{{ form.education }}</span>
                         </div>
-                      </div>
+
                     </div>
                     <div class="row">
-                      <div class="col-md-5">
-                        <div class="form-group">
+                      <div class="form-group"></div>
+                      <div class="col-md-4">
+
                           <label class="bmd-label-floating">Height</label>
 
-                          <span>
-                            <input type="number" class="form-control">{{ form.height }}</span>
+                          <span class="form-control">
+                            {{ form.height }}</span>
                         </div>
                       </div>
                     </div>
@@ -111,12 +103,12 @@
                       </div>
                     </div>
                 </div> -->
+              </fieldset>
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
               </div>
-            </div>
            <!--<div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-avatar">
@@ -134,7 +126,4 @@
                 </div>
               </div>
             </div> -->
-          </div>
-        </div>
-      </div>
     {% endblock content %}

@@ -1,5 +1,6 @@
 {% extends "users/welcome.html" %}
 {% load static %}
+{% load widget_tweaks %}
 {% block content %}
 
 
@@ -12,11 +13,11 @@
 					
 					<div class="wrap-input100 wrap-input100 validate-input m-b-20" data-validate="Type user name">
 						<input id="first-name" class="input100" type="text" name="username" placeholder="User name">
-						<span class="focus-input100">{{ form.username }}</span>
+						<span class="focus-input100">{% render_field form.username class="focus-input100" %}</span>
 					</div>
 					<div class="wrap-input100 wrap-input100 validate-input m-b-20" data-validate="Type password">
 						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100">{{ form.password }}</span>
+						<span class="focus-input100">{% render_field form.password class="focus-input100" %}</span>
 					</div>
 					
 					<div class="container-login100-form-btn">

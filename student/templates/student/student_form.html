@@ -14,6 +14,7 @@
 -->
 {% extends "student/base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 <!--{% load crispy_forms_tags %} -->
 {% block content %}
             <div class="col-md-8">
@@ -26,27 +27,28 @@
                   <form method="POST">
                     {% csrf_token %}
 
-                      <fieldset class="form-group" form="student">
                         <div class="row">
-                        <div class="col-md-8">
+                        <div class="col-md-6">
+
                           <label class="bmd-label-floating">Name</label>
-                          <span class="form-control"> {{ form.name }}</span>
+                           {% render_field form.name class="form-control"%}
                         </div>
                       </div>
 
                     <div class="row">
 
                       <div class="col-md-4">
+                        <div class="form-group">
                           <label class="bmd-label-floating">Age</label>
-                          <span class="form-control">{{ form.age }}</span>
+                          {% render_field form.age class="form-control" %}
                         </div>
+                      </div>
                     </div>
                     <div class="row">
 
                       <div class="col-md-4">
                           <label class="bmd-label-floating">Gender</label>
-                          <span class="form-control">
-                            {{ form.sex }}</span>
+                            {% render_field form.sex class="form-control" %}
                         </div>
                       </div>
 
@@ -54,14 +56,14 @@
                       <div class="col-md-8">
                           <label class="bmd-label-floating">Date Of Admission</label>
 
-                          <span class="form-control">{{ form.date_of_admission }}</span>
+                          {% render_field form.date_of_admission class="form-control" %}
                         </div>
                     </div>
                     <div class="row">
                       <div class="col-md-8">
 
                           <label class="bmd-label-floating">Date Of Leaving</label>
-                          <span class="form-control">{{ form.date_of_leaving }}</span>
+                          {% render_field form.date_of_leaving class="form-control" %}
                         </div>
 
                     </div>
@@ -71,7 +73,7 @@
 
                           <label class="bmd-label-floating">Education</label>
 
-                          <span class="form-control">{{ form.education }}</span>
+                         {% render_field form.education class="form-control" %}
                         </div>
 
                     </div>
@@ -80,9 +82,7 @@
                       <div class="col-md-4">
 
                           <label class="bmd-label-floating">Height</label>
-
-                          <span class="form-control">
-                            {{ form.height }}</span>
+                            {% render_field form.height class="form-control" %}
                         </div>
                       </div>
                     </div>
@@ -103,12 +103,12 @@
                       </div>
                     </div>
                 </div> -->
-              </fieldset>
+
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     <div class="clearfix"></div>
                   </form>
                 </div>
-              </div>
+
            <!--<div class="col-md-4">
               <div class="card card-profile">
                 <div class="card-avatar">

@@ -5,6 +5,8 @@ from django.views.generic import (
     ListView
 )
 from .models import Student
+from .forms import StudentForm
+from django.urls import reverse_lazy
 # Create your views here.
 def home(request):
     return render(request = request,template_name="student/dashboard.html")
@@ -29,5 +31,6 @@ class ShowList(ListView):
 
 class AddStudent(CreateView):
     model = Student
-    fields = ['name','age','sex','date_of_admission','date_of_leaving','education', 'height']
+    form_class = StudentForm
+    success_url = reverse_lazy('table')
 

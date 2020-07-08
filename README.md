@@ -1,2 +1,1 @@
-ASRA
-A database management system for Orphanages
+ASRA is a database management system for Orphanages

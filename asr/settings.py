@@ -17,8 +17,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7s7s2c^cip(*o%!xekw-@9un$ufj^k_@m)msvhuu^(64ta8em2'
-
+# SECRET_KEY = '7s7s2c^cip(*o%!xekw-@9un$ufj^k_@m)msvhuu^(64ta8em2'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -105,6 +105,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
+
+ALLOWED_HOSTS=['aasra-se.herokuapp.com']
 
 TIME_ZONE = 'UTC'
 

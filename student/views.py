@@ -4,24 +4,15 @@ from django.views.generic import (
     CreateView,
     ListView
 )
-from .models import Student
-from .forms import StudentForm
+from .models import Student, Marriage
+from .forms import StudentForm, MarriageForm
 from django.urls import reverse_lazy
 # Create your views here.
 def home(request):
     return render(request = request,template_name="student/dashboard.html")
 
-def add(request):
-    if request.method =='POST':
-        form = AddStudent(request.POST)
-    return render(request = request, template_name="student/student.html")
-
-def table(request):
-    context = {
-        "students": Student.objects.all()
-    }
-    return render(request,'student/tables.html',context)
-
+def load_profile(reqeust):
+    return render(request = request,template_name="student/profile_dropdown.html")
 
 class ShowList(ListView):
     model = Student
@@ -32,5 +23,14 @@ class ShowList(ListView):
 class AddStudent(CreateView):
     model = Student
     form_class = StudentForm
-    success_url = reverse_lazy('table')
+    success_url = reverse_lazy('student:table')
 
+class AddMarriage(CreateView):
+    model = Marriage
+    form_class = MarriageForm
+    success_url = reverse_lazy('student:marriage-view')
+
+class ShowMarriageList(ListView):
+    model = Marriage
+    template_name = 'student/marriage-view.html'
+    context_object_name = 'marriages'

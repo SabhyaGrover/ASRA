@@ -4,8 +4,8 @@ from django.views.generic import (
     CreateView,
     ListView
 )
-from .models import Student
-from .forms import StudentForm
+from .models import Student, Marriage
+from .forms import StudentForm, MarriageForm
 from django.urls import reverse_lazy
 # Create your views here.
 def home(request):
@@ -25,3 +25,12 @@ class AddStudent(CreateView):
     form_class = StudentForm
     success_url = reverse_lazy('student:table')
 
+class AddMarriage(CreateView):
+    model = Marriage
+    form_class = MarriageForm
+    success_url = reverse_lazy('student:marriage-view')
+
+class ShowMarriageList(ListView):
+    model = Marriage
+    template_name = 'student/marriage-view.html'
+    context_object_name = 'marriages'

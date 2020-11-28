@@ -34,14 +34,11 @@ class Marriage(models.Model):
     status =  models.BooleanField()
 
 class Job(models.Model):
-    LOCATIONS= (
-        ('1','Location 1'),
-        ('2','Location 2'),
-    )
     student = models.OneToOneField(Student,on_delete=models.CASCADE)
-    preferred_location = models.CharField(max_length=30, choices = LOCATIONS)
+    preferred_location = models.TextField(default=' ')
     date_of_joining = models.DateField(default=date(1000, 1, 1))
     #qualification
     future_preferences = models.TextField()
-    job_timings = models.DurationField()
-
+    job_timings = models.TextField()
+    def get_absolute_url(self):
+        return reverse('student:test-job')

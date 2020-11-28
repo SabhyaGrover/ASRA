@@ -2,14 +2,10 @@
 =========================================================
 * Material Dashboard Dark Edition - v2.1.0
 =========================================================
-
 * Product Page: https://www.creative-tim.com/product/material-dashboard-dark
 * Copyright 2019 ASRA (http://www.creative-tim.com)
-
 * Coded by www.creative-tim.com
-
 =========================================================
-
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
 {% load static %}
@@ -39,7 +35,6 @@
     <div class="sidebar" data-color="purple" data-background-color="black" data-image="{% static 'img/sidebar-2.jpg' %}">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
-
         Tip 2: you can also add an image using data-image tag
     -->
       <div class="logo"><a href='#' class="simple-text logo-normal">
@@ -56,37 +51,20 @@
           <li class="nav-item ">
             <a class="nav-link" href="{% url 'student:table' %}">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>Resident List</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./typography.html">
-              <i class="material-icons">library_books</i>
-              <p>Typography</p>
+            <a class="nav-link" href="{% url 'student:table' %}">
+              <i class="material-icons">content_paste</i>
+              <p>Job List</p>
             </a>
           </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./icons.html">
-              <i class="material-icons">bubble_chart</i>
-              <p>Icons</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./map.html">
-              <i class="material-icons">location_ons</i>
-              <p>Maps</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="./notifications.html">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
-            </a>
-          </li>
+
           <li class="nav-item ">
             <a class="nav-link" href="{% url 'student:add' %}">
               <i class="material-icons">add_circle_outline</i>
-              <p>Student</p>
+              <p>Add Resident</p>
             </a>
           </li>
           <!-- <li class="nav-item active-pro ">

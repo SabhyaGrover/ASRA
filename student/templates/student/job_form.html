@@ -1,0 +1,111 @@
+<!--
+=========================================================
+* Material Dashboard Dark Edition - v2.1.0
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/material-dashboard-dark
+* Copyright 2019 ASRA (http://www.creative-tim.com)
+
+* Coded by www.creative-tim.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+{% extends "student/base.html" %}
+{% load static %}
+{% load widget_tweaks %}
+<!--{% load crispy_forms_tags %} -->
+
+{% block content %}
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title">Job Details</h4>
+                  <p class="card-category">Fill in the details of the  job</p>
+                </div>
+                <div class="card-body">
+                 
+                  <form method="POST" id="JobForm">
+
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-4">
+                          <label class="bmd-label-floating">Resident</label>
+                            {% render_field form.student class="form-control" %}
+                        </div>
+                      </div>
+
+                        <div class="row">
+                        <div class="col-md-6">
+                          <label class="bmd-label-floating">Preffered Location</label>
+                          {% render_field form.preferred_location class="form-control" %}
+                        </div>
+                      </div>
+
+                    <div class="row">
+
+                      <div class="col-md-4">
+                          <label class="bmd-label-floating">Job Preference</label>
+                        
+                            {% render_field form.future_preferences class="form-control" %}
+                        </div>
+                      </div>
+
+                    <div class="row">
+                      <div class="col-md-8">
+                          <label class="bmd-label-floating">Job Timings</label>
+                       
+                          {% render_field form.job_timings class="form-control" %}
+                        </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-8">
+
+                          <label class="bmd-label-floating">Date Of Joining</label>
+                          
+                          {% render_field form.date_of_joining class="form-control" %}
+                        </div>
+
+                    </div>
+                   <!-- <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Country</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-5">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Postal Code</label>
+                          <input type="text" class="form-control">
+                        </div>
+                      </div>
+                    </div>
+                </div> -->
+
+                    <button type="submit" id="submit_btn" class="btn btn-primary pull-right">Submit</button>
+                    <div class="clearfix"></div>
+                  </form>
+                </div>
+
+           <!--<div class="col-md-4">
+              <div class="card card-profile">
+                <div class="card-avatar">
+                  <a href="#pablo">
+                    <img class="img" src="../static/img/faces/marc.jpg" />
+                  </a>
+                </div>
+                <div class="card-body">
+                  <h6 class="card-category">CEO / Co-Founder</h6>
+                  <h4 class="card-title">Alec Thompson</h4>
+                  <p class="card-description">
+                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                  </p>
+                  <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                </div>
+              </div>
+            </div> -->
+    {% endblock content %}

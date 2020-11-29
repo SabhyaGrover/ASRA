@@ -1,17 +1,3 @@
-<!--
-=========================================================
-* Material Dashboard Dark Edition - v2.1.0
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/material-dashboard-dark
-* Copyright 2019 ASRA (http://www.creative-tim.com)
-
-* Coded by www.creative-tim.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
 {% extends "student/base.html" %}
 {% load static %}
 {% load widget_tweaks %}
@@ -20,17 +6,24 @@
             <div class="col-md-8">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title">Resident</h4>
-                  <p class="card-category">Fill in the details of the resident</p>
+                  <h4 class="card-title">Marriage</h4>
+                  <p class="card-category">Fill in the marriage details</p>
                 </div>
                 <div class="card-body">
-                  <form method="POST" id = "StudentForm">
+                  <form method="POST" id = "MarriageForm">
                     {% csrf_token %}
+                                     <div class="row">
+                        <div class="col-md-6">
+
+                          <label class="bmd-label-floating">Resident</label>
+                           {% render_field form.student class="form-control"%}
+                        </div>
+                      </div>
                   <div class="row">
                         <div class="col-md-6">
 
-                          <label class="bmd-label-floating">Name</label>
-                           {% render_field form.name class="form-control"%}
+                          <label class="bmd-label-floating">Job</label>
+                           {% render_field form.job class="form-control"%}
                         </div>
                       </div>
 
@@ -38,51 +31,27 @@
 
                       <div class="col-md-4">
 
-                          <label class="bmd-label-floating">Age</label>
-                          {% render_field form.age class="form-control" %}
+                          <label class="bmd-label-floating">Ailments</label>
+                          {% render_field form.ailments class="form-control" %}
                       </div>
                     </div>
                     <div class="row">
 
                       <div class="col-md-4">
-                          <label class="bmd-label-floating">Gender</label>
-                            {% render_field form.sex class="form-control" %}
+                          <label class="bmd-label-floating">Preferences</label>
+                            {% render_field form.preferences class="form-control" %}
                         </div>
                       </div>
 
                     <div class="row">
-                      <div class="col-md-8">
-                          <label class="bmd-label-floating">Date Of Admission</label>
-
-                          {% render_field form.date_of_admission class="form-control" %}
-                        </div>
-                    </div>
-                    <div class="row">
-                      <div class="col-md-8">
-
-                          <label class="bmd-label-floating">Date Of Leaving</label>
-                          {% render_field form.date_of_leaving class="form-control" %}
-                        </div>
-
-                    </div>
-                    <div class="row">
 
                       <div class="col-md-4">
 
-                          <label class="bmd-label-floating">Education</label>
+                          <label class="bmd-label-floating">Marital Status</label>
 
-                         {% render_field form.education class="form-control" %}
+                         {% render_field form.status class="form-control" %}
                         </div>
-
-                    </div>
-                    <div class="row">
-                      <div class="form-group"></div>
-                      <div class="col-md-4">
-
-                          <label class="bmd-label-floating">Height</label>
-                            {% render_field form.height class="form-control" %}
-                        </div>
-                      </div>
+                     </div>
                     </div>
                    <!-- <div class="row">
                       <div class="col-md-5">
@@ -101,6 +70,7 @@
                       </div>
                     </div>
                     </div> -->
+
                     <button type="submit" class="btn btn-primary pull-right">Submit</button>
                     <div class="clearfix"></div>
                   </form>

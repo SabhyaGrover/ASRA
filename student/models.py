@@ -27,11 +27,18 @@ class Student(models.Model):
         return reverse('student:table')
 
 class Marriage(models.Model):
+    MARITAL =(
+        ('M','Married'),
+        ('UM','Unmarried'),
+    )
     student = models.OneToOneField(Student,on_delete=models.CASCADE)
     ailments = models.CharField(blank=True,max_length=100)
     job = models.CharField(max_length=20,blank=True)
     preferences = models.TextField(default=' ')
-    status =  models.BooleanField()
+    status =  models.CharField(max_length=30,choices=MARITAL)
+
+    def get_absolute_url(self):
+        return reverse('student:marriage-view')
 
 class Job(models.Model):
     student = models.OneToOneField(Student,on_delete=models.CASCADE)

@@ -134,7 +134,7 @@ dmypy.json
 cython_debug/
 
 # database files
-*.db
+
  Only for Development only
  **/migrations/**
 

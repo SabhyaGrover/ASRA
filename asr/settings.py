@@ -8,6 +8,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 #import psycopg2
 
 #DATABASE_URL = os.environ['DATABASE_URL']
@@ -24,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECRET_KEY = '7s7s2c^cip(*o%!xekw-@9un$ufj^k_@m)msvhuu^(64ta8em2'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 
 # Application definition
@@ -126,3 +127,5 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
+
+django_heroku.settings(locals())

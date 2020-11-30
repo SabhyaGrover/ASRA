@@ -22,8 +22,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -107,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-ALLOWED_HOSTS=['aasra-se.herokuapp.com']
+ALLOWED_HOSTS=['aasra-se.herokuapp.com','127.0.0.1']
 
 TIME_ZONE = 'UTC'
 

@@ -28,18 +28,18 @@ class AddStudent(CreateView):
 class AddJob(CreateView):
     model = Job
     form_class = JobForm
-    success_url = reverse_lazy('student:test-job')
+    success_url = reverse_lazy('student:view-job')
 
 class ShowJob(ListView):
     model = Job
-    template_name = 'student/test-job.html'
+    template_name = 'student/view-job.html'
     context_object_name = 'jobs'
 class AddMarriage(CreateView):
     model = Marriage
     form_class = MarriageForm
-    success_url = reverse_lazy('student:marriage-view')
+    success_url = reverse_lazy('student:view-marriage')
 
 class ShowMarriageList(ListView):
     model = Marriage
-    template_name = 'student/marriage-view.html'
+    template_name = 'student/view-marriage.html'
     context_object_name = 'marriages'

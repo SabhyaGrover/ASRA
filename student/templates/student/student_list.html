@@ -66,6 +66,8 @@
                           <td>
                             {{ student.sex }}
                           </td>
+                          <button class="btn btn-primary pull-center"><a href="{% url 'student:add-job' %}">Add Job</a></button>
+                          <button class="btn btn-primary pull-center"><a href="{% url 'student:add-marriage' %}">Add Marital Status</a></button>
                         </tr>
                         {% endfor %}
                       </tbody>

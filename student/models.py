@@ -22,7 +22,8 @@ class Student(models.Model):
     date_of_leaving = models.DateField(null=True,blank=True)
     education = models.CharField(max_length=30,choices=EDUCATION)
     height = models.IntegerField(help_text='Please enter height in cms')
-
+    def __str__(self):
+         return self.name
     def get_absolute_url(self):
         return reverse('student:table')
 
@@ -36,9 +37,9 @@ class Marriage(models.Model):
     job = models.CharField(max_length=20,blank=True)
     preferences = models.TextField(default=' ')
     status =  models.CharField(max_length=30,choices=MARITAL)
-
+    
     def get_absolute_url(self):
-        return reverse('student:marriage-view')
+        return reverse('student:view-marriage')
 
 class Job(models.Model):
     student = models.OneToOneField(Student,on_delete=models.CASCADE)
@@ -48,4 +49,4 @@ class Job(models.Model):
     future_preferences = models.TextField()
     job_timings = models.TextField()
     def get_absolute_url(self):
-        return reverse('student:test-job')
+        return reverse('student:view-job')

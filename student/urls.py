@@ -15,7 +15,7 @@ urlpatterns = [
     path('add/',AddStudent.as_view(), name='add'),
     path('view/',ShowList.as_view(), name='table'),
     path('add-job/',AddJob.as_view(), name='add-job'),
-    path('test-job/',ShowJob.as_view(), name='test-job'),
-    path('marriageform/',AddMarriage.as_view(), name='marriage-add'),
-    path('marriageview/',ShowMarriageList.as_view(), name='marriage-view')
+    path('view-job/',ShowJob.as_view(), name='view-job'),
+    path('add-marriage',AddMarriage.as_view(), name='add-marriage'),
+    path('view-marriage',ShowMarriageList.as_view(), name='view-marriage')
 ]

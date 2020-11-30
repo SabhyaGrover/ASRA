@@ -3,6 +3,8 @@ from . import views
 from .views import (
 AddStudent,
 ShowList,
+ShowJob,
+AddJob,
 AddMarriage,
 ShowMarriageList
 )
@@ -12,6 +14,8 @@ urlpatterns = [
     path('',views.home, name='home'),
     path('add/',AddStudent.as_view(), name='add'),
     path('view/',ShowList.as_view(), name='table'),
+    path('add-job/',AddJob.as_view(), name='add-job'),
+    path('test-job/',ShowJob.as_view(), name='test-job'),
     path('marriageform/',AddMarriage.as_view(), name='marriage-add'),
     path('marriageview/',ShowMarriageList.as_view(), name='marriage-view')
 ]

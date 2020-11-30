@@ -135,6 +135,4 @@ cython_debug/
 
 # database files
 
- Only for Development only
- **/migrations/**
 

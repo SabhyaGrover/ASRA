@@ -8,13 +8,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
-import dj_database_url
-#import psycopg2
 
-#DATABASE_URL = os.environ['DATABASE_URL']
-
-#conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -81,13 +75,12 @@ WSGI_APPLICATION = 'asr.wsgi.application'
 
 DATABASES = {
     'default': {
-          'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
 
@@ -112,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-ALLOWED_HOSTS=['aasra-se.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS=['aasra-se.herokuapp.com','127.0.0.1','0.0.0.0']
 
 TIME_ZONE = 'UTC'
 
@@ -129,5 +122,3 @@ STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'home'
 LOGIN_URL = 'login'
-
-django_heroku.settings(locals())
